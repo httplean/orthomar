@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+        <title>Orthomar</title>
+</head>
+<body class="p-4 md:p-8">
+    <!-- Cabeçalho com um layout flexível e alinhamento central. -->
+    <header class="flex flex-col md:flex-row items-center justify-between p-4 rounded-xl shadow-lg mb-8">
+        <div class="flex items-center gap-4">
+            <img src="componentes/logo.png" alt="logo" class="logo">
+        </div>
+        
+        <!-- O link de telefone com a imagem. -->
+        <a href="tel:551321389601" class="hidden md:block">
+            <img src="componentes/telefone.jpg" alt="Telefone" class="w-10 h-10 rounded-full">
+        </a>
+        
+        <!-- Navegação do menu com um layout de detalhes/summary. -->
+        <nav class="menu mt-4 md:mt-0">
+            <details class="aberturaInferior">
+                <summary class="font-bold">Alugue: </summary>
+                <a href="andador.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Andador</a>
+                <a href="rodas.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Cadeira de rodas</a>
+                <a href="banho.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Cadeira de banho</a>
+                <a href="cama.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Cama hospitalar</a>
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Guincho para acamados</a>
+                <a href="muleta.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Muleta axilar</a>
+            </details>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal com um layout responsivo de duas colunas em telas maiores. -->
+    <main class="principal grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-xl shadow-lg">
+        <!-- Contêiner da galeria de imagens. -->
+        <div class="galeriaContainer">
+            <div class="imgPrincipal">
+                <img id="mainImage" src="componentes/dx2/principal.webp" alt="imagem principal" class="rounded-lg shadow-md">
+            </div>
+            <!-- Contêiner de miniaturas com um layout de grade flexível. -->
+            <div class="miniaturasContainer grid grid-cols-5 gap-0.5 mt-4">
+                <!-- Usei o atributo `data-src` para armazenar o caminho da imagem. -->
+                <img class="miniaturas" src="componentes/dx2/principal.webp" data-src="componentes/dx2/principal.webp" alt="Miniatura 1">
+                <img class="miniaturas" src="componentes/dx2/2.webp" data-src="componentes/dx2/2.webp" alt="Miniatura 2">
+                <img class="miniaturas" src="componentes/dx2/3.webp" data-src="componentes/dx2/3.webp" alt="Miniatura 3">
+                <img class="miniaturas" src="componentes/dx2/4.webp" data-src="componentes/dx2/4.webp" alt="Miniatura 4">
+                <img class="miniaturas" src="componentes/dx2/5.webp" data-src="componentes/dx2/5.webp" alt="Miniatura 5">
+            </div>
+        </div>
+
+        <!-- Contêiner de texto com descrição e opções de aluguel. -->
+        <div class="containerTexto p-4">
+            <div class="descricao">
+                <h1 class="text-3xl font-bold mb-2">Cama Hospitalar DX2 2 Movimentos até 180 Kg Dellamed</h1>
+                <div class="border-b-2 border-gray-200 pb-4 mb-4"></div>
+                <p class="descricao">
+                    A Cama Dellamed DX é a solução ideal para quem busca conforto e segurança no período de recuperação 
+                    ou para uso prolongado em casa. Perfeita para pacientes acamados ou com mobilidade reduzida, ela 
+                    oferece grades de proteção para garantir a segurança e é extremamente resistente, assegurando durabilidade. 
+                    Com um sistema silencioso de ajuste manual em 5 posições diferentes, você pode adaptar a cama facilmente 
+                    para o máximo conforto e para auxiliar na circulação sanguínea. É a escolha recomendada tanto para uso 
+                    domiciliar quanto para ambientes que exigem cuidados especiais.
+                </p>
+            </div>
+            <br>
+            <div class="opcoes mt-6">
+                <p class="selecione">Selecione a opção de <span>Aluguel:</span></p>
+                <div class="opcoesPagamento flex flex-col items-center">
+                    <div class="opcoesacima flex justify-center w-full">
+                        <button class="btn-aluguel" data-dias="1">Alugar por <span>dia</span></button>
+                        <button class="btn-aluguel" data-dias="7">Alugar por <span>7</span> dias</button>
+                    </div>
+                    <div class="opcoesbaixo flex justify-center w-full mt-2">
+                        <button class="btn-aluguel" data-dias="15">Alugar por <span>15</span> dias</button>
+                        <button class="btn-aluguel" data-dias="30">Alugar por <span>30</span> dias</button>
+                    </div>
+                    <p id="preco">
+                        por: <span id="valor">R$ 00,00</span>
+                    </p>
+                    <div class="border-t-2 border-gray-200 mt-6 pt-6 w-full"></div>
+                    <a href="https://wa.me/5513978186981" class="btn-form" onclick="enviarWhatsapp()" target="_blank">Alugar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Usando um separador visual com a classe Tailwind em vez de uma tag <hr> separada. -->
+    <div class="my-8 border-t-2 border-gray-200"></div>
+
+    <!-- Seção de informações adicionais com um layout de grade responsivo. -->
+    <div class="parteAbaixo grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 p-6 bg-white rounded-xl shadow-lg">
+        <div class="diferenciais">
+            <h2>Descrição:</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>Capacidade: Suporta até <mark>180 kg</mark></li>
+                <li>Giro de<mark>360º</mark> sobre o próprio eixo</li>
+                <li>Eixos com capa protetora que preserva a lubrificação</li>
+                <li>Tem como objetivo fornecer um conforto maior para pacientes e profissionais</li>
+                <li>Pintura eletrostática epóxi garante alta durabilidade e resistência à corrosão</li>
+                <li>Conta com rodas para maior mobilidade em curtas distâncias para posicionamento do paciente</li>
+            </ul>
+        </div>
+        
+        <div class="video flex justify-center items-center">
+            <iframe width="560" height="315" class="rounded-lg shadow-md video" src="https://www.youtube.com/embed/cuGd-63as5Q?si=jeuwDSuirR3SGrRs" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+            picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Rodapé com texto centralizado. -->
+    <footer class="mt-8 text-center text-gray-500 text-sm">
+        <p>Copyright &copy; 2025 Orthomar | Desenvolvido por Evelyn Fazani</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript. -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

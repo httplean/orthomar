@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+        <title>Orthomar</title>
+</head>
+<body class="p-4 md:p-8">
+    <!-- Cabeçalho com um layout flexível e alinhamento central. -->
+    <header class="flex flex-col md:flex-row items-center justify-between p-4 rounded-xl shadow-lg mb-8">
+        <div class="flex items-center gap-4">
+            <img src="componentes/logo.png" alt="logo" class="logo">
+        </div>
+        
+        <!-- O link de telefone com a imagem. -->
+        <a href="tel:551321389601" class="hidden md:block">
+            <img src="componentes/telefone.jpg" alt="Telefone" class="w-10 h-10 rounded-full">
+        </a>
+        
+        <!-- Navegação do menu com um layout de detalhes/summary. -->
+        <nav class="menu mt-4 md:mt-0">
+            <details class="aberturaInferior">
+                <summary class="font-bold">Alugue: </summary>
+                <a href="andador.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Andador</a>
+                <a href="rodas.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Cadeira de rodas</a>
+                <a href="banho.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Cadeira de banho</a>
+                <a href="cama.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Cama hospitalar</a>
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Guincho para acamados</a>
+                <a href="muleta.html" class="block px-4 py-2 hover:bg-gray-200 rounded">Muleta axilar</a>
+            </details>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal com um layout responsivo de duas colunas em telas maiores. -->
+    <main class="principal grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-xl shadow-lg">
+        <!-- Contêiner da galeria de imagens. -->
+        <div class="galeriaContainer">
+            <div class="imgPrincipal">
+                <img id="mainImage" src="componentes/economica/principal.png" alt="imagem principal" class="rounded-lg shadow-md">
+            </div>
+            <!-- Contêiner de miniaturas com um layout de grade flexível. -->
+            <div class="miniaturasContainer grid grid-cols-5 gap-0.5 mt-4">
+                <!-- Usei o atributo `data-src` para armazenar o caminho da imagem. -->
+                <img class="miniaturas" src="componentes/economica/principal.png" data-src="componentes/economica/principal.png" alt="Miniatura 1">
+                <img class="miniaturas" src="componentes/economica/encosto.webp" data-src="componentes/economica/encosto.webp" alt="Miniatura 2">
+                <img class="miniaturas" src="componentes/economica/pe.webp" data-src="componentes/economica/pe.webp" alt="Miniatura 3">
+            </div>
+        </div>
+
+        <!-- Contêiner de texto com descrição e opções de aluguel. -->
+        <div class="containerTexto p-4">
+            <div class="descricao">
+                <h1 class="text-3xl font-bold mb-2">Cadeira Econômica CDS</h1>
+                <div class="border-b-2 border-gray-200 pb-4 mb-4"></div>
+                <p class="descricao">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit aut, consequuntur fuga error 
+                    consectetur et eius eos aliquid numquam quibusdam quisquam rerum sed dolores sapiente. 
+                    Asperiores perferendis porro dolorem praesentium?
+                </p>
+            </div>
+            <br>
+            <div class="opcoes mt-6">
+                <p class="selecione">Selecione a opção de <span>Aluguel:</span></p>
+                <div class="opcoesPagamento flex flex-col items-center">
+                    <div class="opcoesacima flex justify-center w-full">
+                        <button class="btn-aluguel" data-dias="1">Alugar por <span>dia</span></button>
+                        <button class="btn-aluguel" data-dias="7">Alugar por <span>7</span> dias</button>
+                    </div>
+                    <div class="opcoesbaixo flex justify-center w-full mt-2">
+                        <button class="btn-aluguel" data-dias="15">Alugar por <span>15</span> dias</button>
+                        <button class="btn-aluguel" data-dias="30">Alugar por <span>30</span> dias</button>
+                    </div>
+                    <p id="preco">
+                        por: <span id="valor">R$ 00,00</span>
+                    </p>
+                    <div class="border-t-2 border-gray-200 mt-6 pt-6 w-full"></div>
+                    <a href="https://wa.me/5513978186981" class="btn-form" onclick="enviarWhatsapp()" target="_blank">Alugar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Usando um separador visual com a classe Tailwind em vez de uma tag <hr> separada. -->
+    <div class="my-8 border-t-2 border-gray-200"></div>
+
+    <!-- Seção de informações adicionais com um layout de grade responsivo. -->
+    <div class="parteAbaixo grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 p-6 bg-white rounded-xl shadow-lg">
+        <div class="diferenciais">
+            <h2>Diferenciais:</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>Andador <mark>com apoio para o joelho;</mark></li>
+                <li>Possuí bolsa porta objetos removível em nylon;</li>
+                <li>Fabricado em estrutura de <mark>aço</mark>;</li>
+                <li>Capacidade máxima de peso suportado de<mark>136 kg</mark>;</li>
+                <li>Possuí  <mark>guidão de ajuste de altura</mark>, com altura variável de <mark>860-1090mm</mark>;</li>
+                <li>Assento para <mark>apoio de joelho</mark> em poliuretano, ajustável com altura variável de <mark>420-525mm</mark>.</li>
+            </ul>
+        </div>
+        
+        <div class="container-modelos flex justify-around">
+            <a href="repan.html" class="modelo">
+                <img src="componentes/infantil/principal.jpeg" alt="Cadeira Repan Infantil - CDS">
+                <p class="text-center mt-4">Cadeira Repan Infantil - CDS</p>
+            </a>
+            <a href="301.html" class="modelo">
+                <img src="componentes/301/principal.jpg" alt="Cadeira 301 - CDS">
+                <p class="text-center mt-4">Cadeira 301 - CDS</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Rodapé com texto centralizado. -->
+    <footer class="mt-8 text-center text-gray-500 text-sm">
+        <p>Copyright &copy; 2025 Orthomar | Desenvolvido por Evelyn Fazani</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript. -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+:root{
+    --hover-color: #0b8fac;
+    --footer-bg-color: #7bc1b7;
+    --font-family: arial;
+    --background-color: #f9f9f9;
+    --menu-color: #f2f4f5;
+    --text-color: #333;
+    --border-color: #ccc;
+    --link-color: rgb(97, 97, 97);
+    --sumary-bg-color: #1ac8db;
+    --hr-color: #0b8fac93;
+    --sla-color: #646464;
+    --nseioq-color: #ababab4b;
+} 
+
+body { font-family: arial, sans-serif;background-color: var(--background-color);color: var(--text-color); }
+
+/* Estiliza o menu de detalhes para o item Alugue. */
+.aberturaInferior details summary {cursor: pointer;padding: 8px 16px;background-color: var(--menu-color);border-radius: 8px;transition: background-color 0.3s ease;}
+.aberturaInferior details summary:hover { background-color: #e0e0e0; }
+.aberturaInferior a { display: block;padding: 8px 16px;color: var(--sla-color);text-decoration: none;transition: background-color 0.3s ease; font-weight: 500;}
+summary{ list-style: none; font-size: 18px;}
+/* Estilização para o contêiner principal da galeria */
+.galeriaContainer { display: grid; gap: 15px; padding: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+.logo {width:9.5rem; height:auto; object-fit: contain; }
+/* Estilização para as miniaturas de imagem */
+
+
+.container-modelos {
+    display: flex;
+    justify-content: center; /* Centraliza os itens no container */
+}
+
+.modelo {
+    cursor: pointer;
+    border: 2px solid #dbdbdb6b;
+    width: 12rem;
+    padding: 0.5rem 0.5rem 1rem 0.5rem; /* Um valor de padding para cada lado, ou '1rem' para todos os lados. */
+    border-radius: 5px;
+    color: #646464;
+    font-family: var(--font-family);
+    font-size: 18px;
+    display: flex; /* Transforma o link em um flexbox para alinhar a imagem e o texto */
+    flex-direction: column; /* Organiza os itens de cima para baixo */
+    align-items: center; /* Centraliza a imagem e o texto horizontalmente */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.modelo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+h1{ color: var(--text-color);}
+.miniaturas { cursor: pointer;transition: transform 0.2s ease border 0.2s ease;border: 2px solid #dbdbdb65;width: 100px;height: auto;object-fit: cover;border-radius: 5px; }
+.outrosModelos { display:flex; cursor: pointer; border: 2px solid #dbdbdb6b;width:12rem; padding: 0 8px 0 8px; object-fit: cover;border-radius: 5px; color: #646464; font-family: var(--font-family); margin-bottom: 0; font-size: 18px;}
+.miniaturas:first-of-type{ margin-left: 5px;}
+.descricao{ color: var(--sla-color);font-family: var(--font-family);font-size: 20px; }
+.diferenciais h2{ font: bolder;margin-bottom: 4px;font-size: 20px; color: var(--sla-color);}
+.outrasInfos h3{ font: bolder;margin-bottom: 4px;font-size: 20px; color: var(--sla-color);}
+.selecione{ color: var(--sla-color); font-family: var(--font-family); font-size: 18px;}
+.selecione span{ font-weight: 700;}
+.miniaturas:hover, .miniaturas.active {transform: scale(1.05);border: 1.5px solid var(--hover-color); }
+.especificacao{ color: var(--sla-color); font-family: var(--font-family); font-size: 18px; margin-top: 5px; line-height: 1.6; font-weight: 500;}
+#hr{ border-color: var(--hr-color);}
+/* Estilização para os botões de aluguel. */
+.btn-aluguel { flex: 1; padding: 0.75rem; margin: 0.25rem; border: 2px solid var(--hover-color); color: var(--hover-color); font-weight: 700; border-radius: 0.5rem; transition: all 0.4s; color: black;font-size: 18px; }
+.btn-aluguel span { color: var(--hover-color); }
+.btn-aluguel:hover span { color: white; transition: all 0.4s; }
+.btn-aluguel:hover { background-color: var(--hover-color); color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+#valor{ color: var(--hover-color); font-family: var(--font-family); font-size: 24px; font-weight: 700; }
+#preco{ color: var(--sla-color); font-family: var(--font-family); font-size: 24px; font-weight: 500; margin-top: 16px; }
+.btn-form { flex: 1; padding: 0.75rem; margin: 0.25rem; background-color: var(--hr-color); font-weight: 700; border-radius: 0.5rem; color: white;font-size: 19px; width: 50%; text-align: center; }
+.btn-form:hover{box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); transition: all 0.4s; transform: scale(1.03); }
+mark{ background-color: transparent; font-weight: bold; color: var(--sla-color);}
+footer p{ color: var(--footer-bg-color); font-family: var(--font-family); font-size: 17px; font-weight: 600;}
